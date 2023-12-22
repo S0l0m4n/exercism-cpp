@@ -5,6 +5,9 @@
 
 #include "allergies.h"
 
+using std::string;
+using std::unordered_set;
+
 namespace allergies {
     string allergy_names[] {
         "eggs",
