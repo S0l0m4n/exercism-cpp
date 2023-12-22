@@ -16,6 +16,7 @@ namespace allergies {
 
         private:
             int score;
+            unordered_set<string> allergy_set;
     };
 }  // namespace allergies
 
