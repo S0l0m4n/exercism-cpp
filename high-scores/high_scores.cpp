@@ -11,7 +11,7 @@ namespace arcade {
 
     int HighScores::latest_score() {
         // Return the latest score for this session.
-        return scores[scores.size() - 1];
+        return scores.back();
     }
 
     int HighScores::personal_best() {
