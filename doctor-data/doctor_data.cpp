@@ -5,7 +5,6 @@
 #include "doctor_data.h"
 
 using heaven::Vessel;
-using star_map::System;
 
 Vessel Vessel::replicate(std::string name) {
     Vessel another {name, this->generation + 1, this->current_system};
@@ -27,13 +26,13 @@ bool Vessel::shoot_buster() {
     return ret;
 }
 
-std::string heaven::get_older_bob(Vessel v1, Vessel v2) {
+std::string heaven::get_older_bob(const Vessel& v1, const Vessel& v2) {
     if (v1.generation < v2.generation)
-        return v1.get_name();
+        return v1.name;
     else
-        return v2.get_name();
+        return v2.name;
 }
 
-bool heaven::in_the_same_system(Vessel v1, Vessel v2) {
+bool heaven::in_the_same_system(const Vessel& v1, const Vessel& v2) {
     return v1.current_system == v2.current_system;
 }

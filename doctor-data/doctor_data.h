@@ -22,14 +22,12 @@ namespace star_map {
 namespace heaven {
 
     class Vessel {
-    private:
-        std::string name {};
     public:
+        std::string name {};
         int generation {1};
         star_map::System current_system {star_map::System::Sol};
         int busters {0};
 
-    public:
         Vessel(std::string name, int number) : name {name}, generation {number} {};
         Vessel(std::string name, int number, star_map::System star)
             : name {name}, generation {number}, current_system {star} {};
@@ -37,10 +35,8 @@ namespace heaven {
 
         void make_buster();
         bool shoot_buster();
-
-        std::string get_name() {return name;}
     };
 
-    std::string get_older_bob(Vessel v1, Vessel v2);
-    bool in_the_same_system(Vessel v1, Vessel v2);
+    std::string get_older_bob(const Vessel& v1, const Vessel& v2);
+    bool in_the_same_system(const Vessel& v1, const Vessel& v2);
 }
